@@ -1,2 +1,2 @@
 # wiki
-Tips and tricks, tutorials, resumes ..
+Tips and tricks, tutorials, resumes, CTF writeups ..

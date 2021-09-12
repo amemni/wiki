@@ -1,2 +1,2 @@
 # wiki
-Tips and tricks, tutorials, resumes, CTF writeups .., by [amemni](mailto:memni.aymen@gmail.com).
+Tips and tricks, tutorials, résumés, CTF writeups .., by [amemni](mailto:memni.aymen@gmail.com).

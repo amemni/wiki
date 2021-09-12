@@ -1,8 +1,8 @@
-# Leaning Assembly
+# Assembly
 
-## Why ?
+## Why learn Assembly ?
 
-As a start, I want to learn Assembly (and C/CPP) so that I get better with App - Script and Cracking challenges. In future, if I want to be among the following, Assembly level programming is a must-know:  
+If you want to be among the following, Assembly level programming is a must-know:  
 -> Malware Analysts.  
 -> Code Exploit Writers.  
 -> Reverse Code Engineers.  
@@ -12,16 +12,6 @@ As a start, I want to learn Assembly (and C/CPP) so that I get better with App -
 -> Virus Writers.  
 
 Read: <https://www.quora.com/Is-assembly-level-programming-necessary-to-learn-ethical-hacking>
-
-## TODOs
-
-0. Finish the `Assembly - Basic Syntax` Tutorialspoint course and the `C/C++ Programming | In One Video` Youtube videos.
-1. Finish the `x86 Assembly Language Programming From Ground Up` Udemy course.
-2. Finish the `Reverse Engineering with Radare 2` Udemy course.
-3. Practice a bit at:
-
-- <https://www.root-me.org/en/Challenges/>
-- //TODO: add more ..
 
 ## Notes
 
@@ -203,11 +193,20 @@ Read: <https://www.quora.com/Is-assembly-level-programming-necessary-to-learn-et
 
   - Overview of x86 Memory models:
     - Address modes:
-    ![x86-address-modes](./pics/x886-address-modes.png)
+    ![x86-address-modes](./pics/x86-address-modes.png)
     - Segmented memory model:
     ![segmented-memory-model](./pics/segmented-memory-model.png)
     - Flat memory model:
     ![flat-memory-model](./pics/flat-memory-model.png)
+
+## TODOs
+
+0. Finish the `Assembly - Basic Syntax` Tutorialspoint course and the `C/C++ Programming | In One Video` Youtube videos.
+1. Finish the `x86 Assembly Language Programming From Ground Up` Udemy course.
+2. Finish the `Reverse Engineering with Radare 2` Udemy course.
+3. Practice a bit at:
+
+- <https://www.root-me.org/en/Challenges/>
 
 ## Resources
 
@@ -215,11 +214,11 @@ Read: <https://www.quora.com/Is-assembly-level-programming-necessary-to-learn-et
   - [C Programming | In One Video](https://www.youtube.com/watch?v=3lQEunpmtRA&ab_channel=MikeDane)
   - [C++ Programming | In One Video](https://www.youtube.com/watch?v=raZSmcariyU&t=1595s&ab_channel=MikeDane)
 
-- Tutorialspoint just gets to the point
+- Tutorialspoint just gets to the point:
   - [Assembly - Basic Syntax](https://www.tutorialspoint.com/assembly_programming/assembly_basic_syntax.htm)
 
 - [SecurityTube](http://www.securitytube.net/), still in 2021 ?
 
-- Udemy courses are free since I work at Talend :p:
+- Udemy courses are the best:
   - [x86 Assembly Language Programming From Ground Up](https://www.udemy.com/course/x86-assembly-programming-from-ground-uptm/)
   - [Reverse Engineering with Radare 2](https://www.udemy.com/course/re-radare2/)

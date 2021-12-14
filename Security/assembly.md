@@ -13,9 +13,7 @@ If you want to be among the following, Assembly level programming is a must-know
 
 Read: <https://www.quora.com/Is-assembly-level-programming-necessary-to-learn-ethical-hacking>
 
-## Notes
-
-### General
+## General
 
 - Registers in the IA-32 architecture ?
 //TODO
@@ -25,6 +23,8 @@ Read: <https://www.quora.com/Is-assembly-level-programming-necessary-to-learn-et
 - Mike says C is an imperative statically-typed langage that was invented by .. bla bla. What does it mean ?
   - First, **dynamically-typed** languages perform type checking at runtime, while **statically-typed** languages perform type checking at compile time.
   - Second, With imperative programming, you tell the compiler what you want to happen, step by step, while With declarative programming, you write code that describes what you want, but not necessarily how to get it (declare your desired results, but not the step-by-step).
+
+## Notes
 
 ### Udemy course: x86 Assembly Language Programming From Ground Up
 
@@ -57,7 +57,7 @@ Read: <https://www.quora.com/Is-assembly-level-programming-necessary-to-learn-et
 
   - Von Neumann architecture:
 
-  ```
+  ```asm
   ┌─────┐   Data & Instructions bus   ┌────────┐  
   │ CPU │<--------------------------->│ Memory │  
   └─────┘                             └────────┘  

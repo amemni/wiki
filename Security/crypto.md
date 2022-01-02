@@ -79,7 +79,7 @@
   => gcd (121, 88) = 11
   ```
 
-    - Solving the multiplicative inverse ?
+  - Solving the multiplicative inverse:
 
   ```matlab
   5 * x ≡ 1 (mod 7)
@@ -90,4 +90,36 @@
   => 3 * 5 * x ≡ 3 (mod 7)
   
   Then x ≡ 3 (mod 7) is the solution
+  ```
+
+  - Euler's generalization of Fermat's little thoerem:
+
+  ```matlab
+  φ(n) = |{ x | (x, n) = 1 , 1 <= x < n }|
+
+  Let (a, n) = 1 then
+  a ^ φ(n) ≡ 1 (mod n)
+  ```
+
+  - Successive squaring:
+
+  ```matlab
+  2^5012 (mod 101) ?
+  
+  Per Euler's generalisation, 2^100 ≡ 1 (mod 101)
+  => 2^5012 ≡ 2^(50*100+12) (mod 101)
+            ≡ 2^12 (mod 101)
+            ≡ 2^8 * 2^4 (mod 101)
+            ≡ 54 * 16 (mod 101)
+            ≡ 56 (mod 101)
+  ```
+
+  - The Euler-Phi function:
+  ```matlab
+  A multiplicative function is a function f : ZZ+ -> ZZ+ such that
+  if a, b ∈ ZZ+ with (a, b) = 1 then
+  F(a*b) = F(a) * F(b)
+
+  The Euler-Phi function is multiplicative (long proof)
+  => Let (m, n) = 1, then φ(m*n) = φ(m) * φ(n)
   ```

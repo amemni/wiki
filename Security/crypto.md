@@ -71,7 +71,7 @@
 
   121 = 88 * 1 + 33
   88 = 33 * 2 + 22
-  33 = 22 * 1 + 11
+  33 = 22 * 1 + 11  
 
   => 11 = 33 - 1 * (88 - 33 * 2)
         = 3 * 33 - 88
@@ -293,6 +293,26 @@
   m ≡ c^d (mod n)
   , and d * e ≡ 1 (mod (p-1)*(q-1)) ≡ 1 (mod φ(n))
   => d ≡ e^-1 (mod (p-1)*(q-1))
+
+  m^d and c^e are very large computations, however we're working in mod n and we use successif squaring to compute it efficiently
   ```
 
-  //TODO: revise Euler and how to calculate φ(n) ?
+  - Elliptic Curve Cryptography:
+  ```matlab
+  Compared to RSA, it's new, faster, way more efficient (less memory and compute) and more secure
+
+  Let's have y = x^3 + a * x + b
+  The idea is, no matter what, if you take any 2 points on an elliptic curve, and you draw a line between them, it's gonna pass a third point, guarenteed.
+  ```
+  ![elliptic-curves](./pics/elliptic-curves.png)
+  ```matlab
+  How to encrypt ?
+  (x1, y1) ⊕ (x2, y2) = (x3, y3)
+  where { x3 = m^2 - x1 - x2, y3 = m * (x1 - x3) - y1, if x1 ≠ x2
+        { x3 = m^2 - 2 * x, y3 = m * (x1 - x3) - y1, if x1 = x2, y1 = y2
+        { ∞, if x1 = x2, y1 = - y2
+  m: point slope => m = (y2 - y1) / (x2 - x1) or m = dy / dx (x1, y1)
+
+  How to decrypt ?
+  It's so hard, unless you know K (the number of times you added the point/message to itself).
+  ```

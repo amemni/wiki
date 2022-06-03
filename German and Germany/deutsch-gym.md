@@ -270,3 +270,30 @@ fortgeschritten - advanced
 - Arbeitslosigkeit
 - GeldSchuld
 - Erneuerbare-Energien
+
+## Mittwoch 01.06.2022
+
+🟡 Die Naschkatze 🟡
+(someone with a sweet tooth)
+
+1. Bist Du eine Naschkatze?
+2. Beschreibe den perfekten Naschkram: süß, salzig, fettig...
+3. Welches Naschwerk/ welchen Naschkram magst Du? (Studentenfutter, Marshmallowmäuse, Chips, Popkorn..)
+4. Sind Chips und Schokolade überhaupt das Gleiche?
+5. Was hältst Du von gesunden alternativen wie Reis- oder Linsenchips?
+6. Oder wie findest Du vegane Süßigkeiten?
+7. Oder kalorienfreie Schokolade?
+8. Hast Du eine Lieblingsmarke?
+9. Magst Du lieber "traditionelle"/handgemachte Süßigkeiten?
+10. Felht Dir etwas aus Deiner Heimat?
+11. Gibt es eine Jahreszeit, zu der Du besonders viel naschst?
+12. Verschenkst Du gerne so etwas?
+13. Hast Du schon bei "Süßes sonst gibt's Saures" (Halloween -> trick or treat) mitgemacht?
+
+Antworten/Wortschatz:
+
+- Gesettigfettsaure ?
+- Cholesterine
+- Anstatt von Zucker
+- mit Sorgfalt gemacht
+- Korper

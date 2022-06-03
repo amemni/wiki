@@ -1641,3 +1641,51 @@ root@cks-master:~#
 
 - TODO:
   - Alias + Autocomplete <- K8s cheat sheet
+
+- Allowed tools:
+  - https://kubernetes.io/docs/ and their subdomains
+  - https://github.com/kubernetes/ and their subdomains
+  - https://kubernetes.io/blog/ and their subdomains
+  - Trivy documentation https://aquasecurity.github.io/trivy/
+  - Falco documentation https://falco.org/docs/
+  - App Armor documentation https://gitlab.com/apparmor/apparmor/-/wikis/Documentation
+
+- Things to remeber:
+  - How to run `kube-bench`:
+
+  ```bash
+  docker run --pid=host -v /etc:/etc:ro -v /var:/var:ro -t aquasec/kube-bench:latest master --version 1.23
+  ```
+
+  - Server binaries: https://github.com/kubernetes/kubernetes/blob/v1.24.1/CHANGELOG/CHANGELOG-1.24.md#server-binaries
+
+  - Use `automountServiceAccountToken: false` to disable svc account mounting
+  - Use `--anonymous-auth=false` to disable anonymous auth
+  - Use `--enable-admission-plugins=NodeRestriction` to enable NodeRestriction admission plugin
+  - Use `--encryption-provider-config` to pass an EncryptionConfiguration for ETCD
+  - Use `RuntimeClassName: gvisor` to specify a RuntimeClass and use a Sandbox
+  - System ServiceAccounts are named like: `system:serviceaccount:ns1:pipeline`
+  - Use `--enable-admission-plugins=PodSecurityPolicy` to enable PSP admission plugin (and allow default SA to use PSPs)
+
+  - How to run `kube-sec`:
+
+  ```bash
+  docker run -i kubesec/kubesec:v2 scan /dev/stdin < pod.yaml
+  ```
+
+  - How to run `opa/conftest`:
+
+  ```bash
+  docker run --rm -v $(pwd):/project openpolicyagent/conftest test deploy.yaml
+  ```
+
+  - How to run `trivy`:
+
+  ```bash
+  docker run ghcr.io/aquasecurity/trivy:latest image nginx:latest |grep CRITICAL
+  ```
+
+  - Use `--enable-admission-plugins=ImagePolicyWebook` to enable Image policy webhook
+  - User `--audit-policy-file` and `--audit-log-path|maxsize|maxbackup` to configure an Audit policy
+
+  - AA commands: `aa-status`, `aa-genprof`, `aa-complain`, `aa-enforce` and `aa-logprof`

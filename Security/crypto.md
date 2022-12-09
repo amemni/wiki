@@ -2,6 +2,8 @@
 
 ### Why learn Cryptography ?
 
+//TODO
+
 ## Notes
 
 ### Udemy course: Master Mathematical Cryptography 2020: Crack Any Code
@@ -71,11 +73,11 @@
 
   121 = 88 * 1 + 33
   88 = 33 * 2 + 22
-  33 = 22 * 1 + 11  
+  33 = 22 * 1 + 11
 
   => 11 = 33 - 1 * (88 - 33 * 2)
         = 3 * 33 - 88
-  
+
   => gcd (121, 88) = 11
   ```
 
@@ -88,7 +90,7 @@
   => 1 = 3 * 5 - 2 * 7
   => 1 ≡ 3 * 5 (mod 7)
   => 3 * 5 * x ≡ 3 * 5 (mod 7)
-  
+
   Then x ≡ 3 (mod 7) is the solution
   ```
 
@@ -105,7 +107,7 @@
 
   ```matlab
   2^5012 (mod 101) ?
-  
+
   Per Euler's generalisation, 2^100 ≡ 1 (mod 101)
   => 2^5012 ≡ 2^(50*100+12) (mod 101)
             ≡ 2^12 (mod 101)
@@ -115,6 +117,7 @@
   ```
 
   - The Euler-Phi function:
+
   ```matlab
   A multiplicative function is a function f : ZZ+ -> ZZ+ such that
   if a, b ∈ ZZ+ with (a, b) = 1 then
@@ -132,6 +135,7 @@
 
 - Section 3 | Old Cryptography
   - Shift cipher:
+
   ```matlab
   A - 01 <-> 06      Key: add 5
   B - 02 <-> 07
@@ -143,10 +147,11 @@
 
   Solve by using letter frequency to decrypt.
   E.g: TMNRSQNTTPRYTT
-  => E <-> T ("E" is most frequent character) => Key: add 15 
+  => E <-> T ("E" is most frequent character) => Key: add 15
   ```
 
   - Affine cipher:
+
   ```matlab
   X -> α * x + β (mod n)     Key: multiply by α
                                   then add β
@@ -157,6 +162,7 @@
   ```
 
   - Vigenere cipher:
+
   ```matlab
   A bloc cipher
 
@@ -175,6 +181,7 @@
   ```
 
   - Playfair cipher:
+
   ```matlab
   A bloc cipher
 
@@ -191,7 +198,7 @@
   How ?
     - For characters forming a rectangle, get opposing corners,
     - For characters on the same line, shift by 1 in the matrix
-  
+
   Solve by:
     - Assuming the last row will always be "U V W X Z" (less frequent characters)
     - We know that once we use up the ciphertext, we get the alphabet again (not perfectly)
@@ -200,6 +207,7 @@
 
 - Section 4 | Modern Cryptography
   - The AES Cryptosystem:
+
   ```matlab
   Succeeds the DES Cryptosystem
   Start with a matrix of bytes (hexadecimal):
@@ -212,7 +220,7 @@
     - Using the S-Box table, split each byte on the matrix to 2 pieces then substitute it with a position in the S-Box.
     - The S-Box looks like this:
           0000 0001 0010 0011 0100 ... 1111
-    0000   63   7c   77   7b   f2       76   
+    0000   63   7c   77   7b   f2       76
     0001   ca   82   c9   7d   fa       c0
     0010   b7   fd   93   26   36       15
     0011   04   c7   23   c3   18       75
@@ -220,7 +228,7 @@
     ...
     1111  8c   a1   89   0d   bf       16
     - We will end up with a new Matrix.
-  
+
   Step 2: shift rows
     - (a11 a12 a13 a14) -0->      (a11 a12 a13 a14)
       (a21 a22 a23 a24) -1->  =>  (a24 a21 a22 a23)
@@ -232,14 +240,14 @@
     - We multiply bytes by representing them into polynomials, e.g (knowing that X + X = 2X = 0):
     00111001 * 00000101 => (X^5 + X^4 + X^3 + 1) * (X^2 + 1) = X^7 + X^5 + X^6 + X^4 + X^5 + X^3 + X^2 + 1
                                                              = X^7 + X^6 + X^4 + X^3 + X^2 + 1
-  
+
   Step 4: round-key addition
     - The key, which is a matrix, changes with every round, e.g:
     (.. .. .. ..)    (           )
     (.. .. .. ..)    (           )
     (.. .. .. ..) => (W5 W6 W7 W8)
     (.. .. .. ..)    (           )
-     W1 W2 W3 W4 
+     W1 W2 W3 W4
     , with: Wi = Wi-4 ⊕ Wi-1
     , and if i is divisible by 4, then: Wi = Wi-4 ⊕ T(Wi-1)
     E.g: W5 = W1 ⊕ W4
@@ -253,7 +261,7 @@
      ((d))   (a)            (   h     )
     , where r(i) = 00000010 ^ ((i-4)/4) = X ^ ((i-4)/4)
     E.g:
-            (e ⊕ r(8))    
+            (e ⊕ r(8))
     T(W7) = (   f     )
             (   g     )
             (   h     )
@@ -265,6 +273,7 @@
   ```
 
   - how to endcrypt/decrypt aes and where to find AES in your computer:
+
   ```matlab
   How to mutliply Hexadecimals or Polynomials ?
   E.g {57} * {83} = {c1} because
@@ -281,6 +290,7 @@
   ```
 
   - The RSA Cryptosystem:
+
   ```matlab
   Founded on the security behind prime number factorisation
   Key: n = p * q
@@ -298,13 +308,16 @@
   ```
 
   - Elliptic Curve Cryptography:
+
   ```matlab
   Compared to RSA, it's new, faster, way more efficient (less memory and compute) and more secure
 
   Let's have y = x^3 + a * x + b
   The idea is, no matter what, if you take any 2 points on an elliptic curve, and you draw a line between them, it's gonna pass a third point, guarenteed.
   ```
-  ![elliptic-curves](./pics/elliptic-curves.png)
+
+  ![elliptic-curves](./pics/crypto/elliptic-curves.png)
+
   ```matlab
   How to encrypt ?
   (x1, y1) ⊕ (x2, y2) = (x3, y3)

@@ -1689,3 +1689,10 @@ root@cks-master:~#
   - User `--audit-policy-file` and `--audit-log-path|maxsize|maxbackup` to configure an Audit policy
 
   - AA commands: `aa-status`, `aa-genprof`, `aa-complain`, `aa-enforce` and `aa-logprof`
+  - Crictl commands: `crictl ps -id` and `crictl pods -id`
+  - Etcdctl commands: `etcdctl ... get /registry/{type}/{namespace}/{name}`
+
+  - Vim: to insert in many lines, use CTRL + V then SHIFT + I
+  - Awk: to have many delimiters, user -F '[,.]'
+
+  - User `--group system:serviceaccounts` when creating RoleBindings to allow all NSs.

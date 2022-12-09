@@ -297,3 +297,154 @@ Antworten/Wortschatz:
 - Anstatt von Zucker
 - mit Sorgfalt gemacht
 - Korper
+
+## Samstag (04/06/2022)
+
+🟡 Kritik 🟡
+
+1. Was ist Kritik?
+2. Wie gehst du mit Kritik um?
+3. Wann kritisierst du andere?
+4. In welchen Fällen ist Kritik wichtig und wann unangebracht?
+5. Was hältst du von Menschen, die andere ständig kritisieren?
+6. Warum kritisieren wir andere überhaupt?
+7. Was kritisierst du an dich selbst?
+8. Hast du Menschen geführt? Wie hast du sie kritisiert?
+
+Antworten/Wortschatz:
+
+- Beurteilung = judgement
+- Rat
+- respektovol
+- eifersüchtig
+- zu sabotieren
+- eine politische Partei
+- neugierig
+- Himmel
+- unbedingt
+- demnächst
+- geschmolzen
+
+## Samstag 11.06.2022
+
+🔵  Im Flugzeug 🔵
+
+🕵️‍♀️ Rollenspiel👨‍⚕️
+
+🔸Scenario 1🔸
+
+Du sitzt im Flugzeug. Es gibt Turbulenzen. Die Stewardess/der Steward bittet dich, deinen Gurt anzulegen, aber du weigerst dich. Deine Begleitung versucht dich dazu zu überreden, auf die Stewardess/den Steward zu hören.
+
+Fluggast 1
+Fluggast 2
+Stewardess/Steward
+
+🔸Szenario 2🔸
+
+Ihr seid ganz aufgeregt und habt ganz viele Fragen an die Stewardess/den Steward. Ihr möchtet unter anderem wissen, wann ihr am Ziel ankommt, wie das Wetter ist und wann das Essen serviert wird.
+
+Fluggast 1
+Fluggast 2
+Stewardess / Steward
+
+🔸 Szenario 3 🔸
+
+Dein Sitzplatz ist 33a, doch jemand sitzt auf deinem Platz. Du machst diese Person darauf aufmerksam. Doch die Person ist davon überzeugt, auf dem richtigen Platz zu sitzen. Ihr ruft die Stewardess und sie fragt nach der Boardingkarte. Es stellt sich heraus, dass der andere Fluggast Sitzplatz 33b hat.
+
+Fluggast 1
+Fluggast 2
+Stewardess/Steward
+
+Antworten/Wortschatz:
+
+- überreden = convince
+- Rauch vom Flugel
+- Anweisungen
+
+## Donnerstag 16.06.2022
+
+🟡 Abendroutine 🟡
+
+1. Hast Du viele Routinen oder bist Du eher spontan?
+2. Was machst Du gerne, wenn Du von der Arbeit oder vom Unterricht nach Hause kommst?
+3. Gibt es Abendgewohnheiten, auf die Du gar nicht verzichten möchtest?
+4. Wie würde eine besonders gesunde Abendgestaltung aussehen?
+5. Gibt es etwas, das Du erledigen musst, bevor Du schlafen gehst?
+6. Möchtest Du am Abend eher Action oder eher Entspannung?
+7. Brauchst Du abends etwas Zeit alleine, nur für Dich?
+8.
+9. Bist Du eher ein Morgen- oder ein Nachtmensch?
+
+spontan– spontaneous,
+Die Gewohnheit – habit, custom,
+verzichten– do without,
+Zeit für Dich– time for yourself,
+Der Nachtmensch – night person, night owl
+
+- Ich versuche, gute Gewohnheiten und Routinen zu haben
+- Ich zögere viel
+- Sie verpflichten sich, sich 25 Minuten lang auf eine Aufgabe zu konzentrieren. Dann gibt es eine Pause von 5 Minuten. Und umgekehrt ..
+- kalt, bewölkt, depressiv
+- Hängt von der Jahreszeit ab
+- alles woran ich mich erinnere
+- im Gegensatz
+- anschließend, danach
+- in der Vergangenheit
+- ich komme nicht dazu
+
+## Donnerstag 23.06.2022
+
+🟡 Sport 🟡
+
+1. Machst du selbst Sport oder ist Sport eher etwas zum Anschauen?
+2. Welche Sportarten gibt es?
+3. Was ist eigentlich kommerzieller Sport?
+4. Warum ist Schwimmen eine der gesündesten Sportarten?
+5. Welche Sportarten und welcher Sport ist eigentlich gesund?
+6. Was ist genau das Gesunde am Sport-Machen
+7. Gibt es eine Sportart, die du gerne einmal probieren würdest?
+8. Welchen Sport magst du am wenigsten?
+9. Welcher Sport ist alt, welcher neu?
+10. Gefällt dir besser Gruppen- oder Solo-Sport?
+
+etwas zum Anschauen – something to look at
+kommerziell - commercial
+das gesündeste – the healthiest (sth.)
+
+Antworten/Wortschatz:
+
+- Ich treibe lieber Sport als zuzuschauen
+- kommerzieller Sport. organisiert und auf Profit gespielt.
+- Sport zum Spaß
+- baut Ausdauer, Muskelkraft und kardiovaskuläre Fitness auf
+- peinlich
+- Du gibst in kurzer Zeit zu viel Energie, aber du kannst nicht lange durchhalten
+- Du siehst gut aus aber hast kein Ausdauer
+
+- Energetisch ?
+
+## Samstag 16.07.2022
+
+🟡 Lebenslauf 🟡
+
+1. Wozu dient ein Lebenslauf?
+Wie ist ein Lebenslauf aufgebaut? Was gehört alles in einen Lebenslauf?
+2. Findest du, dass Fotos in einem Lebenslauf wichtig/unwichtig sind? Warum?
+3. Warum ist die Angabe von persönlichen Interessen im Lebenslauf wichtig/unwichtig?
+4. Worauf achtet die Personalabteilung besonders in einem Lebenslauf?
+5. Wie kann man mit seinem Lebenslauf einen guten Eindruck gewinnen und aus der Masse herausstechen?
+6. Inwieweit sollte man seinen Lebenslauf für verschiedene Jobangebote anpassen?
+
+Antworten/Wortschatz:
+
+- selbstsicher oder selbstvertrauer
+- ein professionelles Aussehen
+- Entscheidungen auf der Grundlage technischer Qualifikationen treffen
+- Überschrift
+- orthografische Fehler
+- Aufmerksamkeit erregen
+
+**************
+dw langsam gesprochene nachrichten
+**************
+

@@ -12,7 +12,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 ## Linux
 
-- https://github.com/MalwareSamples/Linux-Malware-Samples
+- Linux malware samples: https://github.com/MalwareSamples/Linux-Malware-Samples
 
 # Tools
 

@@ -4,7 +4,7 @@
 
 These are interesting links of projects, issues, tools ..etc that I thought I'd save here instead of getting lost between bookmarks and favorites of different browsers (PS: I know there are some free extensions for managing bookmarks but I still like the GitOps way :wink:).
 
-# Attacks, articles ..
+# Articles
 
 ## Network
 
@@ -13,6 +13,11 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 ## Linux
 
 - Linux malware samples: https://github.com/MalwareSamples/Linux-Malware-Samples
+
+## Programming
+
+- Secure DLC: https://learn.microsoft.com/en-us/azure/well-architected/security/secure-development-lifecycle
+- Tfsec: https://github.com/aquasecurity/tfsec/tree/master
 
 # Tools
 

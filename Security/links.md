@@ -18,6 +18,12 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - Linux malware samples: <https://github.com/MalwareSamples/Linux-Malware-Samples>
 
+## Windows
+
+- WSL:
+
+  - Networking considerations: <https://learn.microsoft.com/en-us/windows/wsl/networking>
+
 ## Programming
 
 - Secure DLC: <https://learn.microsoft.com/en-us/azure/well-architected/security/secure-development-lifecycle>

@@ -41,6 +41,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - Payload list: <https://github.com/payloadbox/xss-payload-list>
   - Tiny payloads: <https://github.com/terjanq/Tiny-XSS-Payloads>
   - Evasion cheat sheet: <https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html>
+  - PortSwigger cheat sheet: <https://portswigger.net/web-security/cross-site-scripting/cheat-sheet>
 
 # Tools
 

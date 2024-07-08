@@ -32,6 +32,8 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 ## Web
 
+- HTTP3 and QUIC: https://cabulous.medium.com/http-3-quic-and-how-it-works-c5ffdb6735b4
+
 - Security headers:
 
   - HSTS (`Strict-Transport-Security`): <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>

@@ -45,6 +45,11 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - Evasion cheat sheet: <https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html>
   - PortSwigger cheat sheet: <https://portswigger.net/web-security/cross-site-scripting/cheat-sheet>
 
+- Cache poisoning:
+
+  - <https://portswigger.net/research/responsible-denial-of-service-with-web-cache-poisoning>
+  - <https://portswigger.net/research/practical-web-cache-poisoning>
+
 # Tools
 
 ## Network

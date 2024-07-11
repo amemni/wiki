@@ -62,4 +62,4 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 ## Social engineer
 
-- Evilginx2:<https://github.com/kgretzky/evilginx2>
+- Evilginx2: <https://github.com/kgretzky/evilginx2>

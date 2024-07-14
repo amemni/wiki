@@ -10,6 +10,10 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - SMTP smuggling: <https://www.youtube.com/watch?v=V8KPV96g1To&t=1s>
 
+- DNS:
+
+  - TLDs: <https://data.iana.org/TLD/tlds-alpha-by-domain.txt>
+
 ## Crypto
 
 - Digital signatures explained: <https://www.youtube.com/watch?v=MaOyDcVMnXU>

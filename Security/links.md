@@ -18,6 +18,12 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - Digital signatures explained: <https://www.youtube.com/watch?v=MaOyDcVMnXU>
 
+## Cracking
+
+- Wordlists:
+
+  - SecLists: <https://github.com/danielmiessler/SecLists>
+
 ## Linux
 
 - Linux malware samples: <https://github.com/MalwareSamples/Linux-Malware-Samples>

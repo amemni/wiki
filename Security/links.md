@@ -60,6 +60,8 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - <https://portswigger.net/research/responsible-denial-of-service-with-web-cache-poisoning>
   - <https://portswigger.net/research/practical-web-cache-poisoning>
 
+- OAuth account takeover: <https://blog.ostorlab.co/one-scheme-to-rule-them-all.html>
+
 # Tools
 
 ## Network

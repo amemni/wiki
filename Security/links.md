@@ -28,7 +28,11 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - Linux malware samples: <https://github.com/MalwareSamples/Linux-Malware-Samples>
 - Kernel CVEs: <https://www.linuxkernelcves.com/>
-- GTFOBins: <https://gtfobins.github.io/>
+
+- Privilege escalation:
+
+  - GTFOBins: <https://gtfobins.github.io/>
+  - Leverage LD_PRELOAD: <https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/>
 
 ## Windows
 
@@ -79,6 +83,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 ## Linux
 
 - Privilege escalation:
+
   - LinPeas: <https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS>
   - LinEnum: <https://github.com/rebootuser/LinEnum>
   - LES (Linux Exploit Suggester): <https://github.com/mzet-/linux-exploit-suggester>
@@ -96,3 +101,11 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 ## Flipper Zero
 
 - BadUSB: <https://github.com/I-Am-Jakoby/Flipper-Zero-BadUSB>
+
+# Techniques
+
+## Linux
+
+- 
+
+  - Explained here: 

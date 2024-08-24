@@ -27,6 +27,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 ## Linux
 
 - Linux malware samples: <https://github.com/MalwareSamples/Linux-Malware-Samples>
+- Kernel CVEs: <https://www.linuxkernelcves.com/>
 
 ## Windows
 
@@ -73,6 +74,15 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - The-Login: <https://github.com/The-Login>
 - dnsReaper: <https://github.com/punk-security/dnsReaper>
+
+## Linux
+
+- Privilege escalation:
+  - LinPeas: <https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS>
+  - LinEnum: <https://github.com/rebootuser/LinEnum>
+  - LES (Linux Exploit Suggester): <https://github.com/mzet-/linux-exploit-suggester>
+  - Linux Smart Enumeration: <https://github.com/diego-treitos/linux-smart-enumeration>
+  - Linux Priv Checker: <https://github.com/linted/linuxprivchecker>
 
 ## Programming
 

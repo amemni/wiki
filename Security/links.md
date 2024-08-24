@@ -28,6 +28,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - Linux malware samples: <https://github.com/MalwareSamples/Linux-Malware-Samples>
 - Kernel CVEs: <https://www.linuxkernelcves.com/>
+- GTFOBins: <https://gtfobins.github.io/>
 
 ## Windows
 

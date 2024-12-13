@@ -45,6 +45,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 ## Programming
 
 - Secure DLC: <https://learn.microsoft.com/en-us/azure/well-architected/security/secure-development-lifecycle>
+- OWASP secure coding practices: <https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/>
 
 ## Web
 

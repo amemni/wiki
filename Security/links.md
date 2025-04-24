@@ -70,10 +70,6 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 - OAuth account takeover: <https://blog.ostorlab.co/one-scheme-to-rule-them-all.html>
 - GraphQL injection: <https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/GraphQL%20Injection>
 
-## Podcasts
-
-- Risky Business: <https://risky.biz/netcasts/risky-business/>
-
 # Tools
 
 ## Network
@@ -102,6 +98,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 ## Social engineer
 
 - Evilginx2: <https://github.com/kgretzky/evilginx2>
+- Atomics: <https://github.com/redcanaryco/atomic-red-team>
 
 ## Flipper Zero
 
@@ -109,8 +106,8 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 # Techniques
 
-## Linux
+TODO
 
-- 
+# Podcasts
 
-  - Explained here: 
+- Risky Business: <https://risky.biz/netcasts/risky-business/>

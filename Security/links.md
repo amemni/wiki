@@ -76,7 +76,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - The-Login: <https://github.com/The-Login>
 - dnsReaper: <https://github.com/punk-security/dnsReaper>
-- DNS bruteforce: `dnsrecon
+- DNS bruteforce: `dnsrecon`
 
 ## Crypto
 

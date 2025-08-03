@@ -95,6 +95,10 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - Tfsec: <https://github.com/aquasecurity/tfsec/tree/master>
 
+## Web
+
+- Content discovery: `ffuf`, `dirb`, `gobuster` ..
+
 ## Social engineer
 
 - Evilginx2: <https://github.com/kgretzky/evilginx2>

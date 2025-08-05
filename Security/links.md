@@ -75,8 +75,11 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 ## Network
 
 - The-Login: <https://github.com/The-Login>
-- dnsReaper: <https://github.com/punk-security/dnsReaper>
-- DNS bruteforce: `dnsrecon`
+- DNS:
+
+  - dnsReaper: <https://github.com/punk-security/dnsReaper>
+  - Recon: `dnsrecon`
+  - Sublist3r: <https://github.com/aboul3la/Sublist3r>
 
 ## Crypto
 

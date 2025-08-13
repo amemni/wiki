@@ -23,6 +23,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 - Wordlists:
 
   - SecLists: <https://github.com/danielmiessler/SecLists>
+  - Auto_Wordlists: <https://github.com/carlospolop/Auto_Wordlists>
 
 ## Linux
 

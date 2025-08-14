@@ -97,6 +97,10 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - Linux Smart Enumeration: <https://github.com/diego-treitos/linux-smart-enumeration>
   - Linux Priv Checker: <https://github.com/linted/linuxprivchecker>
 
+## Windows
+
+- Evil-WinRM: <https://github.com/Hackplayers/evil-winrm>
+
 ## Programming
 
 - Tfsec: <https://github.com/aquasecurity/tfsec/tree/master>

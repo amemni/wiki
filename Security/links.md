@@ -42,6 +42,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - Networking considerations: <https://learn.microsoft.com/en-us/windows/wsl/networking>
  
 - Conditional access risks detections: <https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks>
+- SMB relay attacks: <https://tcm-sec.com/smb-relay-attacks-and-how-to-prevent-them/>
 
 ## Programming
 

@@ -125,3 +125,4 @@ TODO
 # Podcasts
 
 - Risky Business: <https://risky.biz/netcasts/risky-business/>
+- IppSec: <https://www.youtube.com/@ippsec/videos>

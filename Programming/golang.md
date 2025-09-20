@@ -2,7 +2,8 @@
 
 ### Why learn Golang ?
 
-//TODO
+GoLang is simple, fast (compiled), cross-platform and used by Google. Need more reasons ?
+For me, I like to use it for building small CLI applications.
 
 ## Notes
 

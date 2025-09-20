@@ -1,28 +1,30 @@
-docker-grafana-prometheus-cadvisor
-==================================
+# docker-grafana-prometheus-cadvisor
 
-## This code is an answer for the following contest:
+## Intro
 
-Write a Dockerfile which uses the official ruby image (https://hub.docker.com/ruby/) which contains a ruby program running in an infinite loop and doing the following:
+This code is an answer for the following contest:
 
-**Program**
-
-1. Do a 5sec pause.
-2. Download the JSON file from http://candidateexercise.s3-website-eu-west-1.amazonaws.com/exercise1.yaml
-3. Generate terraform resources “aws_instance” (https://www.terraform.io/docs/providers/aws/r/instance.html) and “aws_key_pair” (https://www.terraform.io/docs/providers/aws/r/key_pair.html) out of it. The key needs to be used by the instance.
-4. Print out the terraform resources.
-
-**Docker Compose**
-
-Write a docker-compose file containing the following containers:
-1. Your program: uses your Dockerfile as the build argument and runs in an infinite loop.
-2. Either a Prometheus (https://hub.docker.com/r/prom/prometheus/) or Graphite (https://hub.docker.com/r/graphiteapp/graphite-statsd/tags/) container - up to you!
-3. A Cadvisor (https://hub.docker.com/r/google/cadvisor/) container which needs to collect performance data from all containers and writes into the Prometheus or Graphite DB.
-4. A Grafana (https://hub.docker.com/r/grafana/grafana/) container which visualises the performance data.
+> Write a Dockerfile which uses the official ruby image (https://hub.docker.com/ruby/) which contains a ruby program running in an infinite loop and doing the following:
+>
+> **Program**
+>
+> 1. Do a 5sec pause.
+> 2. Download the JSON file from http://candidateexercise.s3-website-eu-west-1.amazonaws.com/exercise1.yaml
+> 3. Generate terraform resources “aws_instance” (https://www.terraform.io/docs/providers/aws/r/instance.html) and “aws_key_pair” (https://www.terraform.io/docs/providers/aws/r/key_pair.html) out of it. The key needs to be used by the instance.
+> 4. Print out the terraform resources.
+> 
+> **Docker Compose**
+> 
+> Write a docker-compose file containing the following containers:
+> 1. Your program: uses your Dockerfile as the build argument and runs in an infinite loop.
+> 2. Either a Prometheus (https://hub.docker.com/r/prom/prometheus/) or Graphite (https://hub.docker.com/r/graphiteapp/graphite-statsd/tags/) container - up to you!
+> 3. A Cadvisor (https://hub.docker.com/r/google/cadvisor/) container which needs to collect performance data from all containers and writes into the Prometheus or Graphite DB.
+> 4. A Grafana (https://hub.docker.com/r/grafana/grafana/) container which visualises the performance data.
 
 ## Setup instructions
 
 Clone this repo locally, cd to docker-grafana-prometheus-cadvisor/ and run `docker-compose up -d`:
+
 ```
 git clone https://github.com/amemni/devops-examples
 cd docker-grafana-prometheus-cadvisor/
@@ -32,6 +34,7 @@ docker-compose up -d
 ## Useful commands
 
 - You can edit the [.env](https://github.com/amemni/devops-examples/blob/master/docker-grafana-prometheus-cadvisor/.env) file to change the default values of environment variables, mainly the admin username and password for Grafana, else you can pass values for the environment varibales in the command line before `docker-compose up -d`, example:
+
 ```
 ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
 amemni@amemni-laptop:~/devops-examples/docker-grafana-prometheus-cadvisor$ ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
@@ -42,6 +45,7 @@ dockergrafanaprometheuscadvisor_grafana_1 is up-to-date
 ```
 
 - Run `docker-compose ps` or `docker ps` to list running comtainers, example:
+
 ```
 amemni@amemni-laptop:~/devops-examples/docker-grafana-prometheus-cadvisor$ docker-compose ps
 WARNING: The ADMIN_USER variable is not set. Defaulting to a blank string.
@@ -55,6 +59,7 @@ dockergrafanaprometheuscadvisor_prometheus_1   /bin/prometheus --config.f ...   
 ```
 
 - Run `docker-compose down` to shut-down the stack, example:
+
 ```
 amemni@amemni-laptop:~/devops-examples/docker-grafana-prometheus-cadvisor$ docker-compose down
 Stopping dockergrafanaprometheuscadvisor_grafana_1 ... done
@@ -69,6 +74,7 @@ Removing network dockergrafanaprometheuscadvisor_network
 ```
 
 - Run `docker network list` to list networks, and `docker network inspect dockergrafanaprometheuscadvisor_network` to inspect the bridge network for the stack, example:
+
 ```
 amemni@amemni-laptop:~/devops-examples/docker-grafana-prometheus-cadvisor$ docker network list
 NETWORK ID          NAME                                      DRIVER              SCOPE
@@ -167,6 +173,7 @@ If you want to add more dashboards to the demo, make sure to copy a Grafana JSON
 ### The ruby program
 
 The program service uses the [Dockerfile](https://github.com/amemni/devops-examples/blob/master/docker-grafana-prometheus-cadvisor/Dockerfile) to build a ruby image and runs the [program.rb](https://github.com/amemni/devops-examples/blob/master/docker-grafana-prometheus-cadvisor/program.rb) script in an infinite loop as defined in [docker-compose.yml](https://github.com/amemni/devops-examples/blob/master/docker-grafana-prometheus-cadvisor/docker-compose.yml) (restart: always). To display STDOUT ouptut from the program container, simply un `docker-compose logs -ft program` (-f for following output, -t for display timestamps), example:
+
 ```
 amemni@amemni-laptop:~/devops-examples/docker-grafana-prometheus-cadvisor$ docker-compose logs -ft program
 Attaching to dockergrafanaprometheuscadvisor_program_1
@@ -193,6 +200,7 @@ program_1     | 2018-10-08T20:09:57.694874120Z
 ### cAdvisor and Prometheus
 
 cAdvisor, or as the name says "Container Advisor", gathers resource usage and performance characteristics of all running containers. The data is exported by containers and the docker host and accessible through the following special system and Docker directories as defined in [docker-compose.yaml](https://github.com/amemni/devops-examples/blob/master/docker-grafana-prometheus-cadvisor/docker-compose.yml):
+
 ```
   cadvisor
   ...
@@ -206,6 +214,7 @@ cAdvisor, or as the name says "Container Advisor", gathers resource usage and pe
 Prometheus is a systems and service monitoring system that collects metrics from configured targets at given times, evaluates rule expressions and display results. The Prometheus configuration is stored in ./prometheus/prometheus.yml and has 2 scrape targets with different scrape_interval values :
 - the cadvisor service to collect metrics of all containers and the Docker host,
 - the prometheus service to collect metrics of the prometheus container itself.
+
 ```
 ...
 scrape_configs:

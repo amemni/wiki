@@ -1,19 +1,21 @@
-terraform-ec2-elb-docker-nginx
-==============================
+# terraform-ec2-elb-docker-nginx
 
-## This code is an answer for the following contest
+## Intro
 
-Write a terraform configuration which contains the following:
+This code is an answer for the following contest:
 
-**AWS Setup**
-1. An EC2 instance of type t2.micro based on a Debian Stretch Image.
-2. A Loadbalancer forwarding incoming requests to the EC2 instance.
-
-The EC2 instance needs to run an Nginx webserver serving one HTML file (just make one up and make the file part of your Github repo). The Nginx server is a Docker container started on the EC2 instance.
+> Write a terraform configuration which contains the following:
+>
+> **AWS Setup**
+> 1. An EC2 instance of type t2.micro based on a Debian Stretch Image.
+> 2. A Loadbalancer forwarding incoming requests to the EC2 instance.
+>
+> The EC2 instance needs to run an Nginx webserver serving one HTML file (just make one up and make the file part of your Github repo). The Nginx server is a Docker container started on the EC2 instance.
 
 ## Setup instructions
 
 Clone this repo locally, cd to terraform-ec2-elb-docker-nginx/ and run `terraform init` then `terraform apply`:
+
 ```
 git clone https://github.com/amemni/devops-example
 cd terraform-ec2-elb-docker-nginx
@@ -27,6 +29,7 @@ The terraform script will then ask you to input 2 variables:
 **_Important note_**: make sure the keypair name you provide was created from your public ssh key you have installed under locally under ~/.ssh/ (id_rsa.pub or id_dsa.pub ..etc), the reason is the "file" and "local-exec" provisionners use an ssh-agent authentication by default with the private ssh key registered in your ssh agent.
 
 Example:
+
 ```
 amemni@amemni-laptop:~/devops-examples/terraform-ec2-elb-docker-nginx$ terraform apply
 var.keypair
@@ -88,12 +91,14 @@ Outputs:
 
 elb_dns_name = web-server-elb-332872914.us-east-2.elb.amazonaws.com
 ```
+
 You should then be able access the web application from the following URL as shown in the output value of elb_dns_name: http://web-server-elb-332872914.us-east-2.elb.amazonaws.com
 ![application](https://github.com/amemni/devops-examples/blob/master/terraform-ec2-elb-docker-nginx/pictures/screenshot.png)
 
 ## Useful commands
 
 - Run `terraform plan` to generate and show an execution plan with applying changes, example:
+
 ```
 amemni@amemni-laptop:~/devops-examples/terraform-ec2-elb-docker-nginx$ terraform plan
 var.keypair
@@ -173,20 +178,24 @@ Destroy complete! Resources: 0 destroyed.
 ```
 
 - Run `terraform output` to read from the state file and output an output value as defined in outputs.tf, example:
+
 ```
 amemni@amemni-laptop:~/devops-examples/terraform-ec2-elb-docker-nginx$ terraform output elb_dns_name
 web-server-elb-332872914.us-east-2.elb.amazonaws.com
 ```
+
 The previous command outputs the DNS name of the ELB resource, you can then access the web server at the following URL: http://web-server-elb-332872914.us-east-2.elb.amazonaws.com
 
 ### AWS resources
 
 The following AWS resources are created by the terraform script:
+
 1. a default security group to be attached to EC2 instance(s), which should allow:
 	- Incoming (ingress) HTTP:80 and SSH:22 traffic from your local computer, needed to be able to access the web page and for the "file" and "local-exec" provisionners, HTTP access is also needed for ELB health checks on port 80,
 	- Outgoing (egress) access for EC2 istances to be able to `apt update`, download docker, pull the nginx image ..etc.
 
 **_Note_**: as explained in comments inside the [main.tf](https://github.com/amemni/devops-examples/blob/master/terraform-ec2-elb-docker-nginx/main.tf) file, range 0.0.0.0/0 was allowed for the purpose of this demo and it is not recommend to have your web servers open to the world, make sure to replace that with a restricted range if possible.
+
 ```
 resource "aws_security_group" "default_security_group" {
   name        = "web-server-instance"
@@ -219,10 +228,10 @@ resource "aws_security_group" "default_security_group" {
 }
 ```
 
-
 2. one or more EC2 instance(s) depending on the count (you can update the count variable to provision more EC2 instances) of type t2.micro (free tier) and using the official Debian 9 AMI, no public IP address is needed and 2 provisionners are executed at the end with an ssh connection to do the following tasks:
 	- a file provisionner in order to scp the content of the files/ folder (containing the index.html and junk.png files files) under /tmp/,
 	- a local exec provisionner to do the following in order: add the official docker debian repository to apt sources, `apt update`, install and start docker, pull the nginx image and run and nginx container with copying the index.html file on top of /usr/share/nginx/html.
+
 ```
 resource "aws_instance" "web_server_instance" {
   count = 1
@@ -265,6 +274,7 @@ resource "aws_instance" "web_server_instance" {
 3. an elastic load balancer that's needed to route and distribute incoming traffic on the EC2 instance(s), with an HTTP health check to evaluate if an EC2 instance is healthy or not, and a simple HTTP listener as defined in the [main.tf](https://github.com/amemni/devops-examples/blob/master/terraform-ec2-elb-docker-nginx/main.tf) file.
 
 **_Note_**: for the purpose of this demo, a simple HTTP listener is used, it's recommended to use a secure HTTPS listener for a production setup using a *signed* SSL certificate that can be uploaded in AWS IAM, ACM or manually.
+
 ```
 resource "aws_elb" "web_server_elb" {
   name               = "web-server-elb"

@@ -35,6 +35,8 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - GTFOBins: <https://gtfobins.github.io/>
   - Leverage LD_PRELOAD: <https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/>
 
+- Container basics: <https://0xn3va.gitbook.io/cheat-sheets/container/overview/basics>
+
 ## Windows
 
 - WSL:

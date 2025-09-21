@@ -110,6 +110,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 ## Web
 
 - Content discovery: `ffuf`, `dirb`, `gobuster` ..
+- Requestbin (capture HTTP or whenbook requests when performing blind SSRF): <https://pipedream.com/requestbin>
 
 ## Social engineer
 

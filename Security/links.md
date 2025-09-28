@@ -65,7 +65,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - Tiny payloads: <https://github.com/terjanq/Tiny-XSS-Payloads>
   - Evasion cheat sheet: <https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html>
   - PortSwigger cheat sheet: <https://portswigger.net/web-security/cross-site-scripting/cheat-sheet>
-
+  
 - Cache poisoning:
 
   - <https://portswigger.net/research/responsible-denial-of-service-with-web-cache-poisoning>
@@ -111,6 +111,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - Content discovery: `ffuf`, `dirb`, `gobuster` ..
 - Requestbin (capture HTTP or whenbook requests when performing blind SSRF): <https://pipedream.com/requestbin>
+- XSS Hunter Express: <https://github.com/mandatoryprogrammer/xsshunter-express>
 
 ## Social engineer
 

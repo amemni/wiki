@@ -65,6 +65,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - Tiny payloads: <https://github.com/terjanq/Tiny-XSS-Payloads>
   - Evasion cheat sheet: <https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html>
   - PortSwigger cheat sheet: <https://portswigger.net/web-security/cross-site-scripting/cheat-sheet>
+  - Polygot list: <https://gist.github.com/ThanHuuTuan/9ae03167c3e397112f911679f1ee1545>
   
 - Cache poisoning:
 

@@ -6,6 +6,13 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 # Articles, videos, attacks ..
 
+## Learning platforms
+
+Here are my favourites:
+
+- Hacker101 (from HackerOne): <https://www.hacker101.com/> (recommend mentorship mondays)
+- HTB academy: <https://academy.hackthebox.com> (checkout the silver plan)
+
 ## Network
 
 - SMTP smuggling: <https://www.youtube.com/watch?v=V8KPV96g1To&t=1s>

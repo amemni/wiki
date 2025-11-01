@@ -132,7 +132,14 @@ Here are my favourites:
 
 # Techniques
 
-TODO
+## Web
+
+- How to perform a directory scan ? Here are some examples:
+
+```sh
+# Use gobuster
+gobuster dir -u http://bricks.thm -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -t 50 -r -s '200,204,301,403,401' -e 472 -b ''
+```
 
 # Podcasts
 

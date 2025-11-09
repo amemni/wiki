@@ -6,6 +6,13 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 # Articles, videos, attacks ..
 
+## Learning platforms
+
+Here are my favourites:
+
+- Hacker101 (from HackerOne): <https://www.hacker101.com/> (recommend mentorship mondays)
+- HTB academy: <https://academy.hackthebox.com> (checkout the silver plan)
+
 ## Network
 
 - SMTP smuggling: <https://www.youtube.com/watch?v=V8KPV96g1To&t=1s>
@@ -65,7 +72,8 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
   - Tiny payloads: <https://github.com/terjanq/Tiny-XSS-Payloads>
   - Evasion cheat sheet: <https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html>
   - PortSwigger cheat sheet: <https://portswigger.net/web-security/cross-site-scripting/cheat-sheet>
-
+  - Polygot list: <https://gist.github.com/ThanHuuTuan/9ae03167c3e397112f911679f1ee1545>
+  
 - Cache poisoning:
 
   - <https://portswigger.net/research/responsible-denial-of-service-with-web-cache-poisoning>
@@ -111,6 +119,7 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 - Content discovery: `ffuf`, `dirb`, `gobuster` ..
 - Requestbin (capture HTTP or whenbook requests when performing blind SSRF): <https://pipedream.com/requestbin>
+- XSS Hunter Express: <https://github.com/mandatoryprogrammer/xsshunter-express>
 
 ## Social engineer
 
@@ -123,7 +132,14 @@ These are interesting links of projects, issues, tools ..etc that I thought I'd 
 
 # Techniques
 
-TODO
+## Web
+
+- How to perform a directory scan ? Here are some examples:
+
+```sh
+# Use gobuster
+gobuster dir -u http://bricks.thm -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -t 50 -r -s '200,204,301,403,401' -e 472 -b ''
+```
 
 # Podcasts
 

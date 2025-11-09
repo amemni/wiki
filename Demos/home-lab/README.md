@@ -12,7 +12,17 @@ Here I'll be documenting steps I'm following to build my home Lab and experiment
 
 Following: <https://forums.raspberrypi.com/viewtopic.php?t=101673>
 
-//TBC
+On my RPi and my host, I first needed to install following packages:
+
+```sh
+sudo apt install strongswan
+sudo apt install strongswan-starter
+sudo apt install strongswan-charon
+sudo apt install strongswan-pki
+```
+
+For a host-to-host case, the IPsec transport mode should be sufficient. However, we'll use the IPsec tunnel mode for learning purposes.
+Here's a configuration example: <https://docs.strongswan.org/docs/latest/config/quickstart.html#_host_to_host_case>
 
 ## cGroups v2 on my RPi
 

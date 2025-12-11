@@ -64,6 +64,7 @@ Here are my favourites:
 
 - Security headers:
 
+  - OWASP Secure Headers Project: <https://owasp.org/www-project-secure-headers/>
   - HSTS (`Strict-Transport-Security`): <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>
 
 - XSS:

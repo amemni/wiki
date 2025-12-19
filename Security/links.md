@@ -42,6 +42,10 @@ Here are my favourites:
   - GTFOBins: <https://gtfobins.github.io/>
   - Leverage LD_PRELOAD: <https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/>
 
+- Enumeration:
+
+  - Enum4linux: <https://www.kali.org/tools/enum4linux/>
+
 - Container basics: <https://0xn3va.gitbook.io/cheat-sheets/container/overview/basics>
 
 ## Windows

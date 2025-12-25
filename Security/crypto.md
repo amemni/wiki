@@ -1,12 +1,44 @@
 # Crypto
 
-### Why learn Cryptography ?
+## Why learn Cryptography ?
 
-//TODO
+Learning cryptography is essential for ethical hackers who want to identify weak or poorly implemented encryption, crack password hashes, and assess whether systems are properly protecting sensitive data from attackers.
 
-## Notes
+## Basics of John the Ripper
 
-### Udemy course: Master Mathematical Cryptography 2020: Crack Any Code
+John the Ripper is a tool for conducting fast brute-force (called directory attacks) against various types of hashes.
+
+You can use this `hash-identifier` script to identify a hash type, because John is sometimes not good at that: <https://gitlab.com/kalilinux/packages/hash-identifier/>
+
+List John's supported hash formats:
+
+```sh
+john --list=formats 
+```
+
+NThash or NTLM is what modern Windows OS use to hash user and service passwords. Using a tool like `mimikatz` or the `NTDS.dit` AD database, you can dump the SAM database on a Windows machine.
+
+Example how to crack an NTLM hash:
+
+```sh
+john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt ntlm.txt
+```
+
+As for cracking hashes from /etc/shadown on a Linux machine, John requires first to use `ushadow` in combination with the /etc/password file to generate an acceptable format.
+
+Example how to unshadow and feed the output to John to crack a Linux password:
+
+```sh
+unshadow local_passwd local_shadow > unshadowed.txt
+john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
+```
+
+//TODO: continue
+
+## Theory of mathematical cryptography
+
+Here I'm taking notes from this Udemy course: [Master Mathematical Cryptography 2020: Crack Any Code](https://www.udemy.com/course/cryptography)
+
 
 - Section 2 | Number theory lectures that might help
   - Introduction to congruences:

@@ -6,7 +6,18 @@ Here I'll be documenting steps I'm following to build my home Lab and experiment
 
 ## K3d
 
-//TODO
+I'm using K3d (a a wrapper for K3s, from Rancher) to deploy a minimal K8s cluster on my laptop and connecting my RPi as a worker node to it.
+
+Installation can be done using the installation script: <https://k3d.io/stable/#releases>
+
+Then, you can provision a new cluster like this:
+
+```sh
+amemni@Amemnis-KALI:~$ k3d cluster create amemnis
+amemni@Amemnis-KALI:~$
+```
+
+To be continued ..
 
 ## Strongswan IPSec with my RPi
 
@@ -22,7 +33,10 @@ sudo apt install strongswan-pki
 ```
 
 For a host-to-host case, the IPsec transport mode should be sufficient. However, we'll use the IPsec tunnel mode for learning purposes.
+
 Here's a configuration example: <https://docs.strongswan.org/docs/latest/config/quickstart.html#_host_to_host_case>
+
+To be continued ..
 
 ## cGroups v2 on my RPi
 
@@ -80,4 +94,4 @@ amemni@Amemnis-RASP:~ $
 
 I need to figure out why the memory controller is not enabled yet. There seems to be an issue: <https://forums.raspberrypi.com/viewtopic.php?t=389843>
 
-//TBC
+To be continued ..

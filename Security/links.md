@@ -64,6 +64,7 @@ Here are my favourites:
 
 - Security headers:
 
+  - OWASP Secure Headers Project: <https://owasp.org/www-project-secure-headers/>
   - HSTS (`Strict-Transport-Security`): <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>
 
 - XSS:
@@ -107,6 +108,10 @@ Here are my favourites:
   - Linux Smart Enumeration: <https://github.com/diego-treitos/linux-smart-enumeration>
   - Linux Priv Checker: <https://github.com/linted/linuxprivchecker>
 
+- Enumeration:
+
+  - Enum4linux: <https://www.kali.org/tools/enum4linux/>
+    
 ## Windows
 
 - Evil-WinRM: <https://github.com/Hackplayers/evil-winrm>

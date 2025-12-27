@@ -33,6 +33,32 @@ unshadow local_passwd local_shadow > unshadowed.txt
 john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt
 ```
 
+In addition to the wordlist mode, there's the **single crack** mode where John uses the username and tries to slightly change few letters and numbers to generate a possible password, following a set of "mangling rules".
+
+Custom rules can be used to define custom mangling patterns (password complexity predictability). They are inserted in the /etc/john/john.conf file and have the following syntax: <https://www.openwall.com/john/doc/RULES.shtml>
+
+Example how to call a custom rule:
+
+```sh
+john --wordlist=/usr/share/wordlists/rockyou.txt  --rule=PoloPassword hash.txt
+```
+
+To crack a password-protected ZIP or RAR archive, John requires to use `zip2john` or `rar2john` first to generate an acceptable format.
+
+Example how to crack a password-protected ZIP archive with John:
+
+```sh
+zip2john zipfile.zip > zip_hash.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt zip_hash.txt
+```
+
+Example how to crack a password-protected RAR archive with John:
+
+```sh
+rar2john rarfile.rar > rar_hash.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt
+```
+
 //TODO: continue
 
 ## Theory of mathematical cryptography

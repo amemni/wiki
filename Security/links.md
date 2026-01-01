@@ -97,6 +97,7 @@ Here are my favourites:
 ## Crypto
 
 - CyberChef: <https://gchq.github.io/CyberChef/>
+- Quipqiup: <https://www.quipqiup.com/>
 
 ## Linux
 

@@ -8,16 +8,89 @@ Here I'll be documenting steps I'm following to build my home Lab and experiment
 
 I'm using K3d (a a wrapper for K3s, from Rancher) to deploy a minimal K8s cluster on my laptop and connecting my RPi as a worker node to it.
 
-Installation can be done using the installation script: <https://k3d.io/stable/#releases>
+Installation can be done using the installation script: <https://k3d.io/k3/#releases>
 
 Then, you can provision a new cluster like this:
 
 ```sh
-amemni@Amemnis-KALI:~$ k3d cluster create amemnis
+amemni@Amemnis-KALI:~$ k3d cluster create amemni --config k3d.yaml
 amemni@Amemnis-KALI:~$
 ```
 
+Follow this link if you want rootless Podman instead of docker: <https://k3d.io/v5.8.3/usage/advanced/podman/#using-podman>
+And, beware of this issue: <https://github.com/k3d-io/k3d/issues/1052>
+Basically, checkout the `--kubelet-arg` added in order to run Kubelet in userspace.
+
 To be continued ..
+
+## Cilium
+
+Following: <https://trainingportal.linuxfoundation.org/learn/course/introduction-to-cilium-lfs146>
+
+Instructions to install Cilium CLI: <https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/#install-the-cilium-cli>
+Instructions to install Hubble CLI: <https://docs.cilium.io/en/stable/observability/hubble/setup/#hubble-setup>
+
+Let's starting installing Cilium on my K3d cluster using the CLI method (in contrast to Helm):
+
+```sh
+amemni@Amemnis-KALI:~$ cilium install
+🔮 Auto-detected Kubernetes kind: K3s
+ℹ️  Using Cilium version 1.18.5
+🔮 Auto-detected cluster name: k3d-amemni-cluster
+amemni@Amemnis-KALI:~$
+```
+
+After a few minutes, let's use the following command to confirm and watch the status:
+
+```sh
+amemni@Amemnis-KALI:~$ cilium status --wait
+    /¯¯\
+ /¯¯\__/¯¯\    Cilium:             OK
+ \__/¯¯\__/    Operator:           OK
+ /¯¯\__/¯¯\    Envoy DaemonSet:    OK
+ \__/¯¯\__/    Hubble Relay:       OK
+    \__/       ClusterMesh:        disabled
+...
+amemni@Amemnis-KALI:~$
+```
+
+:bulb: Since we're using K3d, beware of this open issue: <https://github.com/cilium/cilium/issues/38222>
+For the time being, you have to change the tunnel protocol from "vxlan" to "geneve"
+
+Finally, let's enable Hubble:
+
+```sh
+amemni@Amemnis-KALI:~$ cilium hubble enable --ui
+# already enabled
+amemni@Amemnis-KALI:~$
+```
+
+You can deploy the connectivity test suite to confirm network and policy enforcement:
+
+```
+amemni@Amemnis-KALI:~$ cilium connectivity test --request-timeout 30s --connect-timeout 10s
+ℹ️  Monitor aggregation detected, will skip some flow validation steps
+✨ [k3d-amemni-cluster] Creating namespace cilium-test-1 for connectivity check...
+✨ [k3d-amemni-cluster] Deploying echo-same-node service...
+✨ [k3d-amemni-cluster] Deploying DNS test server configmap...
+✨ [k3d-amemni-cluster] Deploying same-node deployment...
+✨ [k3d-amemni-cluster] Deploying client deployment...
+✨ [k3d-amemni-cluster] Deploying client2 deployment...
+✨ [k3d-amemni-cluster] Deploying client3 deployment...
+✨ [k3d-amemni-cluster] Deploying echo-other-node service...
+✨ [k3d-amemni-cluster] Deploying other-node deployment...
+✨ [host-netns] Deploying k3d-amemni-cluster daemonset...
+✨ [host-netns-non-cilium] Deploying k3d-amemni-cluster daemonset...
+ℹ️  Skipping tests that require a node Without Cilium
+✨ [k3d-amemni-cluster] Deploying ccnp deployment...
+⌛ [k3d-amemni-cluster] Waiting for deployment cilium-test-1/client to become ready...
+...
+amemni@Amemnis-KALI:~$
+```
+
+Questions:
+
+- What are eBPF maps ?
 
 ## Strongswan IPSec with my RPi
 

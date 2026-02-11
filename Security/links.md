@@ -24,6 +24,7 @@ Here are my favourites:
 ## Crypto
 
 - Digital signatures explained: <https://www.youtube.com/watch?v=MaOyDcVMnXU>
+- Password storage cheat sheet: <https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html>
 
 ## Cracking
 

@@ -4,6 +4,117 @@
 
 Learning cryptography is essential for ethical hackers who want to identify weak or poorly implemented encryption, crack password hashes, and assess whether systems are properly protecting sensitive data from attackers.
 
+## Using OpenSSL and GNU Privacy Guard for encryption
+
+A good practice is to follow is this room from TryHackMe: [Introduction to Cryptography](https://tryhackme.com/room/cryptographyintro)
+
+### GNU Privacy Guard
+
+Check all supported encryption algorithms:
+
+```sh
+gpg --version
+```
+
+Encrypt a file with the CIPHER encryption algorithm (symmetric):
+
+```sh
+// --armor: create an ASCII armoured output
+gpg --symmetric --cipher-algo CIPHER message.txt
+```
+
+Decrypt the file:
+
+```sh
+gpg --output original_message.txt --decrypt message.gpg
+```
+
+### OpenSSL
+
+Encrypt a file with the AES-256 encryption algorithm (symmetric):
+
+```sh
+// -pbkdf2: use the Password-Based Key Derivation Function
+// -iter NUMBER: interate a NUMBER times
+openssl aes-256-cbc -e -in message.txt -out encrypted_message
+```
+
+Decrypt the file:
+
+```sh
+openssl aes-256-cbc -d -in encrypted_message -out original_message.txt
+```
+
+Generate an RSA private key (assymetric):
+
+```sh
+openssl genrsa -out private-key.pem 2048
+```
+
+Get the public key:
+
+```sh
+openssl rsa -in private-key.pem -pubout -out public-key.pem
+```
+
+:bulb: If you are curious to see the RSA variables p, q, N, e, and d, they correspond to `prime1`, `prime2`, `modulus`, `publicExponent`, and `privateExponent`, respectively:
+
+```sh
+openssl rsa -in private-key.pem -text -noout
+```
+
+Encrypt a file with the RSA private key (assymmetric):
+
+```sh
+openssl pkeyutl -encrypt -in plaintext.txt -out ciphertext -inkey public-key.pem -pubin
+```
+
+Decrypt the file:
+
+```sh
+openssl pkeyutl -decrypt -in ciphertext -inkey private-key.pem -out decrypted.txt
+```
+
+Generate Diffie-Hellman parameters:
+
+```sh
+openssl dhparam -out dhparams.pem 2048
+```
+
+:bulb: If you are curious to see the Diffie-Hellman variables P and G, they correspond to the prime number and the generator, respectively:
+
+```sh
+openssl dhparam -in dhparams.pem -text -noout
+```
+
+Generate a CSR (certificate signing request):
+
+```sh
+$ openssl req -new -nodes -newkey rsa:4096 -keyout key.pem -out cert.csr
+// Then, answer a serie of questions.
+// Finally, send the CSR to a CA to get it signed and receive a certificate.
+```
+
+For testing purposes, you can generate a self-signed certificate:
+
+```sh
+// -x509: generate a certificate instead of a CA
+// -sha256: use the SHA-256 digest
+$ openssl req -x509 -newkey -nodes rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365
+```
+
+### Hmac
+
+To calculate a HMAC, use one of the available tools:
+
+```sh
+$ hmac256 s!Kr37 message.txt
+$ hmac256 1234 message.txt
+// -key: add the secret key
+$ sha256hmac message.txt --key s!Kr37
+$ sha256hmac message.txt --key 1234
+```
+
 ## Basics of John the Ripper
 
 John the Ripper is a tool for conducting fast brute-force (called directory attacks) against various types of hashes.
@@ -24,7 +135,7 @@ Example how to crack an NTLM hash:
 john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt ntlm.txt
 ```
 
-As for cracking hashes from /etc/shadown on a Linux machine, John requires first to use `ushadow` in combination with the /etc/password file to generate an acceptable format.
+As for cracking hashes from /etc/shadown on a Linux machine, John requires first to use `ushadow` in combination with the /etc/password file to generate an acceptable hash format.
 
 Example how to unshadow and feed the output to John to crack a Linux password:
 
@@ -43,7 +154,7 @@ Example how to call a custom rule:
 john --wordlist=/usr/share/wordlists/rockyou.txt  --rule=PoloPassword hash.txt
 ```
 
-To crack a password-protected ZIP or RAR archive, John requires to use `zip2john` or `rar2john` first to generate an acceptable format.
+To crack a password-protected ZIP or RAR archive, John requires to use `zip2john` or `rar2john` first to generate an acceptable hash format.
 
 Example how to crack a password-protected ZIP archive with John:
 
@@ -59,7 +170,14 @@ rar2john rarfile.rar > rar_hash.txt
 john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt
 ```
 
-//TODO: continue
+To crack a passphrase-protected SSH private key, John requires to use `ssh2john` first to generate an acceptable hash format.
+
+Example how to crack a passphrase-protected SSH private key with John:
+
+```sh
+ssh2john id_rsa > id_rsa_hash.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa_hash.txt
+```
 
 ## Theory of mathematical cryptography
 

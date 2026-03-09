@@ -10,6 +10,16 @@ To my understanding:
 - eBPF allows to write custom code that can be loaded dynamically into the kernel (changing its behavior) and, therefore, to instrument an application using eBPF based tools, you don't need to rebuild the application !!,
 - eBPF can be used for many observability and security applications, ranging from performance tracing, high-performance networking, detecting and preventing malicious activity ..etc.
 
+## Preparation
+
+- The [BCC Python framework](https://github.com/iovisor/bcc) is currently the best way to write eBPF programs in python. To install it, follow these steps:
+
+  - Download Linux headers (common and architecture-specific C header files required to build software that interacts with the Linux kernel) from: <https://old.kali.org/kali/pool/main/l/linux/> 
+  - You will also need a kbuild module (the build system used by the Linux kernel).
+  - Here's a good tutorial: <https://hackmd.io/@JunnerX/How-to-Manually-Install-Linux-Headers-on-Kali>
+  - Finally, install `bpfcc-tools` with apt: `sudo apt-get install bpfcc-tools` 
+
+
 ## Code examples
 
 These code examples are taken from the [Leanring eBPF](https://isovalent.com/books/learning-ebpf/) book by Liz Rice.
@@ -171,8 +181,6 @@ amemni@Amemnis-KALI:~$
 ### More examples
 
 To be continued ..
-
-## Playing around with Pixie
 
 ## Interesting links
 

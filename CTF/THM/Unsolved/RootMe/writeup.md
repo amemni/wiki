@@ -64,6 +64,10 @@ Finished
 root@ip-10-66-109-9:~# 
 ```
 
-For getting a reverse shell, I need to try something like this: <https://medium.com/@tareshsharma17/simple-php-reverse-shell-061d4a6bd18d>
+For getting a reverse shell, I'm trying something like this: <https://medium.com/@tareshsharma17/simple-php-reverse-shell-061d4a6bd18d>
+
+I do get a message saying "PHP is not permitted". I try to bypass that by adding an image extention like '.png' but then I see the file is inserted inside an `<img>` tag.
+
+This document explains better evasion techniques with PHP: [File upload bypass](https://github.com/kimthiphuongthao/template/blob/master/example_attack/Bypassing%20File%20Upload%20Restrictions.md)
 
 To be continued ..

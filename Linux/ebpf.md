@@ -26,55 +26,17 @@ These code examples are taken from the [Leanring eBPF](https://isovalent.com/boo
 
 ### Hello world
 
-Code:
+Code: [hello.py](./learning-ebpf/chapter2/hello.py)
 
-```py
-#!/usr/bin/python3  
-from bcc import BPF
-import sys
+In the above example, `hello.py` (the script) is the user space part of the application, whereas `hello()` is the eBPF program that gets run in the kernel.
 
-program = r"""
-int hello(void *ctx) {
-    bpf_trace_printk("Hello World!");
-    return 0;
-}
-"""
+Here, `get_syscall_fnname()` is a helper function (a feature of eBPF) which is a convenient way to find the name of the function that implements the "execve()" system call (which can vary from a kernel version to another).
 
-b = BPF(text=program)
-syscall = b.get_syscall_fnname("execve")
-b.attach_kprobe(event=syscall, fn_name="hello")
-
-try:
-    b.trace_print()
-except KeyboardInterrupt:
-    sys.exit(0)
-```
-
-This uses BCC's Python library. In the above example, `hello.py` (the script) is the user space part of the application, whereas `hello()` is the eBPF program that gets run in the kernel.
-
-Here, `get_syscall_fnname()` is a helper function (a feature of eBPF) which is a convenient way to find the name of the function that implements the "excerve()" system call (which can vary from a kernel version to another).
-
-What happens next is the `attach_kprobe` will attach, using a kprobe (kernel probe), the eBPF program to the said kernel function. The eBPF program will then be loaded whenever an executable is launched in the machine and writes the tracing on the screen.
+What happens next is the `attach_kprobe()` will attach, using a kprobe (kernel probe), the eBPF program to the said kernel function. The eBPF program will then be loaded whenever an executable is launched in the machine and writes the tracing on the screen.
 
 ### Hello world for a network interface
 
-Code:
-
-```c
-#include <linux/bpf.h>
-#include <bpf/bpf_helpers.h>
-
-int counter = 0;
-
-SEC("xdp")
-int hello(struct xdp_md *ctx) {
-    bpf_printk("Hello World %d", counter);
-    counter++; 
-    return XDP_PASS;
-}
-
-char LICENSE[] SEC("license") = "Dual BSD/GPL";
-```
+Code: [hello.bpf.c](./learning-ebpf/chapter3/hello.bpf.c)
 
 In the above example, the user space and the eBPF program are in c code, which is why it's recommended to put eBPF programs into filenames ending with `.bpf.c`.
 
@@ -82,9 +44,7 @@ Good to mention that the macro `SEC()` defines a section called XDP (an Express 
 
 The eBPF program will simply listen for incoming network packets and do nothing (no inspection) except incrementing a counter and printing a message. The eBPF program returns an `XDP_PASS` at the end, which is a verdict indicating the kernel should not block the paket.
 
-### Loading a program into the kernel
-
-Let's refer to the previous example of a hello world for a network interface. What comes next is:
+In order to load the eBPF program into the kernel:
 
 - The eBPF source code needs to be complied into an eBPF byte code (instructions that the eBPF virtual machine will understand). The Clang compiler from the [LLVM](https://llvm.org/) project can be used for that. Here's an extract from the Makefile that does that:
 
@@ -145,24 +105,8 @@ amemni@Amemnis-KALI:~$
 - Since we're talking about an XDP program here, let's try to attach the eBPF program to an XDP event on network interface eth0 like this:
 
 ```sh
-amemni@Amemnis-KALI:~$ sudo bpftool prog show id 77 --pretty
-{
-    "id": 77,
-    "type": "xdp",
-    "name": "hello",
-    "tag": "d35b94b4c0c10efb",
-    "gpl_compatible": true,
-    "loaded_at": 1762721736,
-    "uid": 0,
-    "orphaned": false,
-    "bytes_xlated": 96,
-    "jited": true,
-    "bytes_jited": 76,
-    "bytes_memlock": 4096,
-    "map_ids": [17,18
-    ],
-    "btf_id": 270
-}
+amemni@Amemnis-KALI:~$ sudo bpftool net attach xdp id 77 dev eth0
+// TODO: add output
 amemni@Amemnis-KALI:~$ 
 ```
 

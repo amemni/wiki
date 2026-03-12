@@ -30,9 +30,47 @@ Code: [hello.py](./learning-ebpf/chapter2/hello.py)
 
 In the above example, `hello.py` (the script) is the user space part of the application, whereas `hello()` is the eBPF program that gets run in the kernel.
 
-Here, `get_syscall_fnname()` is a helper function (a feature of eBPF) which is a convenient way to find the name of the function that implements the "execve()" system call (which can vary from a kernel version to another).
+Here:
 
-What happens next is the `attach_kprobe()` will attach, using a kprobe (kernel probe), the eBPF program to the said kernel function. The eBPF program will then be loaded whenever an executable is launched in the machine and writes the tracing on the screen.
+- `get_syscall_fnname()` is a helper function (a feature of eBPF) to find the name of the function that implements the "execve()" system call (which can vary from a kernel version to another),
+- `attach_kprobe()` will attach, using a kprobe (kernel probe), the eBPF program to the said kernel function.
+
+Test:
+
+```sh
+amemni@Amemnis-KALI:~/Desktop/Repos/amemni/wiki/Linux/learning-ebpf/chapter2$ sudo python hello.py 
+b'           <...>-144784  [007] ...21  2913.447495: bpf_trace_printk: Hello from Aymen!!'
+b'           <...>-144785  [004] ...21  2913.447557: bpf_trace_printk: Hello from Aymen!!'
+b'           <...>-144786  [001] ...21  2913.448066: bpf_trace_printk: Hello from Aymen!!'
+b'              sh-144787  [005] ...21  2913.449612: bpf_trace_printk: Hello from Aymen!!'
+b'           <...>-144798  [007] ...21  2913.452359: bpf_trace_printk: Hello from Aymen!!'
+...
+```
+
+### Hello world attached to a syscall entry tracepoint
+
+Code: [hello-file.py](./learning-ebpf/chapter2/hello-file.py)
+
+In the above example:
+
+- `TRACEPOINT_PROBE` is a macro that instruments a tracepoint defined by `<category>:<event>`,
+- Arguments are available in the `args` struct,
+- You can find the format under `/sys/kernel/debug/tracing/events/category/event/format`.
+
+Here, `bpf_get_current_comm()` is another helper function to find the name of the executable (excluding the path) of a current executing task.
+
+Test:
+
+```sh
+amemni@Amemnis-KALI:~/Desktop/Repos/amemni/wiki/Linux/learning-ebpf/chapter2$ sudo python hello-file.py 
+b'          python-111376  [002] ...21  2192.165048: bpf_trace_printk: Filename: /usr/lib/python3.13/__pycache__/tokenize.cpython-313.pyc'
+b'          python-111376  [002] ...21  2192.165056: bpf_trace_printk:   opened by: python'
+b'          python-111376  [002] ...21  2192.166316: bpf_trace_printk: Filename: /usr/lib/python3.13/__pycache__/token.cpython-313.pyc'
+b'          python-111376  [002] ...21  2192.166318: bpf_trace_printk:   opened by: python'
+b'          python-111376  [002] ...21  2192.169342: bpf_trace_printk: Filename: /home/amemni/Desktop/Repos/amemni/wiki/Linux/learning-ebpf/chapter2/hello-file.py'
+...
+```
+
 
 ### Hello world for a network interface
 
@@ -40,7 +78,10 @@ Code: [hello.bpf.c](./learning-ebpf/chapter3/hello.bpf.c)
 
 In the above example, the user space and the eBPF program are in c code, which is why it's recommended to put eBPF programs into filenames ending with `.bpf.c`.
 
-Good to mention that the macro `SEC()` defines a section called XDP (an Express Data Path type of eBPF program) that will be visible in the compiled object file. The macro `SEC()` will be called again at the end to define a license string, a requirement to be able to use eBPF helper functions.
+Here:
+
+- `SEC()` is a macro that defines a section called XDP (an Express Data Path type of eBPF program) that will be visible in the compiled object file,
+- `SEC()` is called again at the end to define a license string, a requirement to be able to use eBPF helper functions.
 
 The eBPF program will simply listen for incoming network packets and do nothing (no inspection) except incrementing a counter and printing a message. The eBPF program returns an `XDP_PASS` at the end, which is a verdict indicating the kernel should not block the paket.
 
@@ -106,7 +147,7 @@ amemni@Amemnis-KALI:~$
 
 ```sh
 amemni@Amemnis-KALI:~$ sudo bpftool net attach xdp id 77 dev eth0
-// TODO: add output
+// TODO
 amemni@Amemnis-KALI:~$ 
 ```
 
@@ -121,6 +162,8 @@ amemni@Amemnis-KALI:~$
 ```
 
 - If everything went fine, we should see trace events with the command `bpftool prog tracelog`, or simply by looking at `/sys/kernel/debug/tracing/trace_pipe`.
+
+// TODO
 
 ### More examples
 

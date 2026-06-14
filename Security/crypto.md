@@ -501,7 +501,7 @@ Here I'm taking notes from this Udemy course: [Master Mathematical Cryptography 
         { x3 = m^2 - 2 * x, y3 = m * (x1 - x3) - y1, if x1 = x2, y1 = y2
         { ∞, if x1 = x2, y1 = - y2
   m: point slope => m = (y2 - y1) / (x2 - x1) or m = dy / dx (x1, y1)
+  ```
 
   How to decrypt ?
   It's so hard, unless you know K (the number of times you added the point/message to itself).
-  ```

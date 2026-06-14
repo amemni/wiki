@@ -83,8 +83,6 @@ Here:
 - `SEC()` is a macro that defines a section called XDP (an Express Data Path type of eBPF program) that will be visible in the compiled object file,
 - `SEC()` is called again at the end to define a license string, a requirement to be able to use eBPF helper functions.
 
-The eBPF program will simply listen for incoming network packets and do nothing (no inspection) except incrementing a counter and printing a message. The eBPF program returns an `XDP_PASS` at the end, which is a verdict indicating the kernel should not block the paket.
-
 In order to load the eBPF program into the kernel:
 
 - The eBPF source code needs to be complied into an eBPF byte code (instructions that the eBPF virtual machine will understand). The Clang compiler from the [LLVM](https://llvm.org/) project can be used for that. Here's an extract from the Makefile that does that:

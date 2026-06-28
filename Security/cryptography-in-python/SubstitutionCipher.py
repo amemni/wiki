@@ -17,8 +17,17 @@ def encrypt(key, message):
             cipher += c
     return cipher
 
+def get_decrypt_key(key):
+    dkey = {}
+    for k in key:
+        dkey[key[k]] = k
+    return dkey
+
 key = generate_key()
 print("Key: {}".format(key))
 message = "YOU ARE AWESOME"
 cipher = encrypt(key, message)
 print("Cipher: {}".format(cipher))
+dkey = get_decrypt_key(key)
+message = encrypt(dkey, cipher)
+print("Message: {}".format(message))

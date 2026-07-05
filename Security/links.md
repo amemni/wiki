@@ -43,6 +43,11 @@ Here are my favourites:
   - GTFOBins: <https://gtfobins.github.io/>
   - Leverage LD_PRELOAD: <https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/>
 
+- Reverse shells:
+
+  - Payloads all the things - Reverse shells: <https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/>
+  - PentestMonkey - Reverse shell cheatsheet: <https://web.archive.org/web/20200901140719/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet>
+
 - Container basics: <https://0xn3va.gitbook.io/cheat-sheets/container/overview/basics>
 
 ## Windows
@@ -50,7 +55,7 @@ Here are my favourites:
 - WSL:
 
   - Networking considerations: <https://learn.microsoft.com/en-us/windows/wsl/networking>
- 
+
 - Conditional access risks detections: <https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks>
 - SMB relay attacks: <https://tcm-sec.com/smb-relay-attacks-and-how-to-prevent-them/>
 
@@ -75,7 +80,7 @@ Here are my favourites:
   - Evasion cheat sheet: <https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html>
   - PortSwigger cheat sheet: <https://portswigger.net/web-security/cross-site-scripting/cheat-sheet>
   - Polygot list: <https://gist.github.com/ThanHuuTuan/9ae03167c3e397112f911679f1ee1545>
-  
+
 - Cache poisoning:
 
   - <https://portswigger.net/research/responsible-denial-of-service-with-web-cache-poisoning>
@@ -113,7 +118,7 @@ Here are my favourites:
 - Enumeration:
 
   - Enum4linux: <https://www.kali.org/tools/enum4linux/>
-    
+
 ## Windows
 
 - Evil-WinRM: <https://github.com/Hackplayers/evil-winrm>

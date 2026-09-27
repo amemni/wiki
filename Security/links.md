@@ -13,6 +13,13 @@ Here are my favourites:
 - Hacker101 (from HackerOne): <https://www.hacker101.com/> (recommend mentorship mondays)
 - HTB academy: <https://academy.hackthebox.com> (checkout the silver plan)
 
+## Vulnerabilities
+
+- Shodan (search engine for IoT devices): <https://www.shodan.io/>
+- VirusTotal: <http://virustotal.com/gui/>
+- ExploitDB (reproducing exploits): <https://www.exploit-db.com/>
+- NVD (NIST vulnerability DB): <https://nvd.nist.gov/vuln>
+
 ## Network
 
 - SMTP smuggling: <https://www.youtube.com/watch?v=V8KPV96g1To&t=1s>
